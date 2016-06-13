@@ -294,7 +294,8 @@ ALTER SEQUENCE manutencao_idmanutencao_seq OWNED BY manutencao.idmanutencao;
 CREATE TABLE maquina (
     idmaquina integer NOT NULL,
     idcategoria integer NOT NULL,
-    idstatus integer NOT NULL
+    idstatus integer NOT NULL,
+    idfabricante integer
 );
 
 
