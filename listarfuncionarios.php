@@ -147,16 +147,16 @@
 					<div class="extras">
 						<ul>
 							<li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> 
-							<a href="page-shopping-cart.html"><b>3 items</b></a></li>
+							<a href="page-shopping-cart.html"><b>0 items</b></a></li>
 							<li>
-								<div class="dropdown choose-country">
+								<!--<div class="dropdown choose-country">
 									<a class="#" data-toggle="dropdown" href="#"><img src="img/flags/gb.png" alt="Great Britain"> UK</a>
 									<ul class="dropdown-menu" role="menu">
 										<li role="menuitem"><a href="#"><img src="img/flags/us.png" alt="United States"> US</a></li>
 										<li role="menuitem"><a href="#"><img src="img/flags/de.png" alt="Germany"> DE</a></li>
 										<li role="menuitem"><a href="#"><img src="img/flags/es.png" alt="Spain"> ES</a></li>
 									</ul>
-								</div>
+								</div>-->
 							</li>
 			        		<li><a href="page-login.html">Login</a></li>
 			        	</ul>
@@ -171,6 +171,9 @@
 						<li>
 							<a href="features.html">Criar Cadastro</a>
 						</li>
+						<li>
+							<a href="listarfuncionario3.php">Funcion&aacuterios</a>
+						</li>
 						<li class="has-submenu active">
 							<a href="#">Fazer Pedido</a>
 							<div class="mainmenu-submenu">
@@ -181,12 +184,7 @@
 											<li><a href="index.html">Homepage (Sample 1)</a></li>
 											<li><a href="page-homepage-sample.html">Homepage (Sample 2)</a></li>
 										</ul>
-										<h4>Team & Open Vacancies</h4>
-										<ul>
-											<li><a href="page-team.html">Our Team</a></li>
-											<li><a href="page-vacancies.html">Open Vacancies (List)</a></li>
-											<li><a href="page-job-details.html">Open Vacancies (Job Details)</a></li>
-										</ul>
+										
 									</div>
 							</div>
 						</li>
@@ -274,17 +272,7 @@
 							</div>
 						</div>
 		    		</div>-->
-		    		<div class="col-footer col-md-3 col-xs-6">
-		    			<h3>Navigate</h3>
-		    			<ul class="no-list-style footer-navigate-section">
-		    				<li><a href="page-blog-posts.html">Blog</a></li>
-		    				<li><a href="page-portfolio-3-columns-2.html">Portfolio</a></li>
-		    				<li><a href="page-products-3-columns.html">eShop</a></li>
-		    				<li><a href="page-services-3-columns.html">Services</a></li>
-		    				<li><a href="page-pricing.html">Pricing</a></li>
-		    				<li><a href="page-faq.html">FAQ</a></li>
-		    			</ul>
-		    		</div>
+		    		
 		    		
 		    		<div class="col-footer col-md-4 col-xs-6">
 		    			<h3>Contacts</h3>
@@ -304,7 +292,7 @@
 		    	</div>
 		    	<div class="row">
 		    		<div class="col-md-12">
-		    			<div class="footer-copyright">&copy; 2013 mPurpose. All rights reserved.</div>
+		    			<div class="footer-copyright">&copy; 2016 mPurpose. All rights reserved.</div>
 		    		</div>
 		    	</div>
 		    </div>

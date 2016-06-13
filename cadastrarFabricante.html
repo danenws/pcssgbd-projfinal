@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Purpose</title>
+        <title>mPurpose - Multipurpose Feature Rich Bootstrap Template</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -56,10 +56,10 @@
 							<a href="index.html">Home</a>
 						</li>
 						<li>
-							<a href="features.html">Criar Cadastro</a>
+							<a href="features.html">Features</a>
 						</li>
 						<li class="has-submenu active">
-							<a href="#">Fazer Pedido</a>
+							<a href="#">Pages +</a>
 							<div class="mainmenu-submenu">
 								<div class="mainmenu-submenu-inner"> 
 									<div>
@@ -68,13 +68,13 @@
 											<li><a href="index.html">Homepage (Sample 1)</a></li>
 											<li><a href="page-homepage-sample.html">Homepage (Sample 2)</a></li>
 										</ul>
-									<!--	<h4>Services & Pricing</h4>
+										<h4>Services & Pricing</h4>
 										<ul>
 											<li><a href="page-services-1-column.html">Services/Features (Rows)</a></li>
 											<li><a href="page-services-3-columns.html">Services/Features (3 Columns)</a></li>
 											<li><a href="page-services-4-columns.html">Services/Features (4 Columns)</a></li>
 											<li><a href="page-pricing.html">Pricing Table</a></li>
-										</ul>-->
+										</ul>
 										<h4>Team & Open Vacancies</h4>
 										<ul>
 											<li><a href="page-team.html">Our Team</a></li>
@@ -82,7 +82,7 @@
 											<li><a href="page-job-details.html">Open Vacancies (Job Details)</a></li>
 										</ul>
 									</div>
-									<!--<div>
+									<div>
 										<h4>Our Work (Portfolio)</h4>
 										<ul>
 											<li><a href="page-portfolio-2-columns-1.html">Portfolio (2 Columns, Option 1)</a></li>
@@ -123,13 +123,13 @@
 											<li><a href="page-blog-post-left-sidebar.html">Blog Single Post (Left Sidebar)</a></li>
 											<li><a href="page-news.html">Latest & Featured News</a></li>
 										</ul>
-									</div>-->
+									</div>
 								</div><!-- /mainmenu-submenu-inner -->
 							</div><!-- /mainmenu-submenu -->
 						</li>
-						<!--<li>
+						<li>
 							<a href="credits.html">Credits</a>
-						</li>-->
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -151,18 +151,42 @@
 				<div class="row">
 					<div class="col-sm-5">
 						<div class="basic-login">
-							<form role="form">
+							<form action="cadastrarFuncionario.php" method="POST" role="form">
+								<div class="form-group">
+		        				 	<label for="register-username"><i class="icon-user"></i> <b>Matricula</b></label>
+									<input class="form-control" name="Matricula" id="matricula" type="number" placeholder="">
+								</div>
 								<div class="form-group">
 		        				 	<label for="register-username"><i class="icon-user"></i> <b>Nome</b></label>
-									<input class="form-control" id="name" type="text" placeholder="">
+									<input class="form-control" name="Nome" id="Nome" type="text" placeholder="">
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-username"><i class="icon-user"></i> <b>Data de Nascimento</b></label>
+									<input class="form-control" name="datanascimento" id="datanascimento" type="text" placeholder="">
 								</div>
 								<div class="form-group">
 		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Password</b></label>
-									<input class="form-control" id="register-password" type="password" placeholder="">
+									<input class="form-control" name="senha" id="senha" type="password" placeholder="">
 								</div>
 								<div class="form-group">
-		        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Re-enter Password</b></label>
-									<input class="form-control" id="register-password2" type="password" placeholder="">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Endereço</b></label>
+									<input class="form-control" name="endereco" id="endereco" type="number" placeholder="">
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Telefone</b></label>
+									<input class="form-control" name="telefone" id="telefone" type="number" placeholder="">
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Supervisor</b></label>
+									<input class="form-control" name="supervisor" id="supervisor" type="number" placeholder="">
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Categoria</b></label>
+									<input class="form-control" name="categoria" id="categoria" type="text" placeholder="">
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Salario Minimo</b></label>
+									<input class="form-control" name="salariominimo" id="salariominimo" type="number" placeholder="">
 								</div>
 								<div class="form-group">
 									<button type="submit" class="btn pull-right">Register</button>
@@ -186,15 +210,15 @@
 	    <div class="footer">
 	    	<div class="container">
 		    	<div class="row">
-		    	<!--	<div class="col-footer col-md-3 col-xs-6">
+		    		<div class="col-footer col-md-3 col-xs-6">
 		    			<h3>Our Latest Work</h3>
 		    			<div class="portfolio-item">
 							<div class="portfolio-image">
 								<a href="page-portfolio-item.html"><img src="img/portfolio6.jpg" alt="Project Name"></a>
 							</div>
 						</div>
-		    		</div>-->
-		    		<!--<div class="col-footer col-md-3 col-xs-6">
+		    		</div>
+		    		<div class="col-footer col-md-3 col-xs-6">
 		    			<h3>Navigate</h3>
 		    			<ul class="no-list-style footer-navigate-section">
 		    				<li><a href="page-blog-posts.html">Blog</a></li>
@@ -204,17 +228,18 @@
 		    				<li><a href="page-pricing.html">Pricing</a></li>
 		    				<li><a href="page-faq.html">FAQ</a></li>
 		    			</ul>
-		    		</div>-->
+		    		</div>
 		    		
 		    		<div class="col-footer col-md-4 col-xs-6">
 		    			<h3>Contacts</h3>
 		    			<p class="contact-us-details">
-	        				<b>Address:</b> Av. Pasteur 458, Urca, Rio de Janeiro, Brasil<br/>
-	        				<b>Phone:</b> +55 21 1234-5678<br/>
-	        				<b>Email:</b> <a href="mailto:contato@purpose.com">contato@purpose.com</a></p>
-		    			</p>
+	        				<b>Address:</b> 123 Fake Street, LN1 2ST, London, United Kingdom<br/>
+	        				<b>Phone:</b> +44 123 654321<br/>
+	        				<b>Fax:</b> +44 123 654321<br/>
+	        				<b>Email:</b> <a href="mailto:getintoutch@yourcompanydomain.com">getintoutch@yourcompanydomain.com</a>
+	        			</p>
 		    		</div>
-		    		<div class="col-footer col-md-2 col-xs-6">
+		    	<!--	<div class="col-footer col-md-2 col-xs-6">
 		    			<h3>Stay Connected</h3>
 		    			<ul class="footer-stay-connected no-list-style">
 		    				<li><a href="#" class="facebook"></a></li>
@@ -222,7 +247,7 @@
 		    				<li><a href="#" class="googleplus"></a></li>
 		    			</ul>
 		    		</div>
-		    	</div>
+		    	</div>-->
 		    	<div class="row">
 		    		<div class="col-md-12">
 		    			<div class="footer-copyright">&copy; 2013 mPurpose. All rights reserved.</div>

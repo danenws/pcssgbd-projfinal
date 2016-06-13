@@ -18,19 +18,16 @@ if(!$dbcon){
 else {
     
     //Armazena em variáveis  as informações digitadas no formulário
-    $matricula = settype($_POST['Matricula'], "int"); 
+    //$matricula = settype($_POST['Matricula'], "int"); 
     $nome = pg_escape_string($_POST['Nome']); 
-    $datanasc = ($_POST['Data de Nascimento']);
-    $senha = $_POST['Password']; 
     $end = settype($_POST['Endereço'], "int"); 
     $tel = settype($_POST['Telefone'], "int"); 
-    $supervisor = settype($_POST['Supervisor'], "int"); 
-    $salmin = settype($_POST['Salario Minimo'], "int");
-    $categ = settype($_POST['Categoria'], "int"); 
+    $desc = ($_POST['Descrição']);
+   
     
     //Armazena as informações no banco
-    $query = "INSERT INTO funcionario(matricula, nome, datanascimento, idendereco, idtelefone, idsupervisor, salariomin, idcategoria) 
-    VALUES ('$matricula', '$nome', '$datanasc', '$end', '$tel', '$supervisor', '$salmin', '$categ', '$senha')";
+    $query = "INSERT INTO fabricante(nome, idtelefone, idendereco, descricao) 
+    VALUES ('$nome', ' '$tel', $end', '$desc')";
 
     $result = pg_query($dbcon, $query);
 }

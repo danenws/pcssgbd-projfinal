@@ -23,9 +23,6 @@
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
         
 
         <!-- Navigation & Logo-->
@@ -35,16 +32,6 @@
 					<div class="extras">
 						<ul>
 							<li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> <a href="page-shopping-cart.html"><b>0 items</b></a></li>
-							<li>
-							<!--	<div class="dropdown choose-country">
-									<a class="#" data-toggle="dropdown" href="#"><img src="img/flags/gb.png" alt="Great Britain"> UK</a>
-									<ul class="dropdown-menu" role="menu">
-										<li role="menuitem"><a href="#"><img src="img/flags/us.png" alt="United States"> US</a></li>
-										<li role="menuitem"><a href="#"><img src="img/flags/de.png" alt="Germany"> DE</a></li>
-										<li role="menuitem"><a href="#"><img src="img/flags/es.png" alt="Spain"> ES</a></li>
-									</ul>
-								</div>-->
-							</li>
 			        		<li><a href="page-login.html">Login</a></li>
 			        	</ul>
 					</div>
@@ -72,6 +59,9 @@
 											<li><a href="page-homepage-sample.html">Homepage (Sample 2)</a></li>
 										</ul>
 										
+								</div><!-- /mainmenu-submenu-inner -->
+							</div><!-- /mainmenu-submenu -->
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -82,7 +72,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h1>Login</h1>
+						<h1>Cadastrar Funcionario</h1>
 					</div>
 				</div>
 			</div>
@@ -93,37 +83,86 @@
 				<div class="row">
 					<div class="col-sm-5">
 						<div class="basic-login">
-							<form role="form" role="form">
+							<form action="cadastrarFuncionario.php" method="POST" role="form">
 								<div class="form-group">
-		        				 	<label for="login-username"><i class="icon-user"></i> <b>Username or Email</b></label>
-									<input class="form-control" id="login-username" type="text" placeholder="">
+		        				 	<label for="register-username"><i class="icon-user"></i> <b>Matricula</b></label>
+									<input class="form-control" name="matricula" id="matricula" type="number" placeholder="">
 								</div>
 								<div class="form-group">
-		        				 	<label for="login-password"><i class="icon-lock"></i> <b>Password</b></label>
-									<input class="form-control" id="login-password" type="password" placeholder="">
+		        				 	<label for="register-username"><i class="icon-user"></i> <b>Nome</b></label>
+									<input class="form-control" name="nome" id="nome" type="text" placeholder="">
 								</div>
 								<div class="form-group">
-									<label class="checkbox">
-										<input type="checkbox"> Remember me
-									</label>
-									<a href="page-password-reset.html" class="forgot-password">Forgot password?</a>
-									<button type="submit" class="btn pull-right">Login</button>
+		        				 	<label for="register-username"><i class="icon-user"></i> <b>Data de Nascimento</b></label>
+									<input class="form-control" name="datanascimento" id="datanascimento" type="date" placeholder="">
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Senha</b></label>
+									<input class="form-control" name="senha" id="senha" type="password" placeholder="">
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Endereço</b></label>
+									<input class="form-control" name="endereco" id="endereco" type="number" placeholder="">
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Telefone</b></label>
+									<input class="form-control" name="telefone" id="telefone" type="number" placeholder="">
+								</div>
+								
+								<div class="form-group">
+		        				 	<select id="animal" name="animal">                      
+									  <option value="0">--Select Animal--</option>
+									  
+									  <?php
+									    $dbconString = "host = localhost dbname = roupasexclusivas user = postgres password = root";
+									     // Criar conexao
+							            $con = pg_connect($dbconString); 
+							            // Verificar conexao
+							            if(!$con){
+							                
+							                echo "Ops! Erro na conexão :( \n";
+							                exit;
+							            }
+							            
+							            else {
+							            
+							                $sql = "SELECT matricula, nome FROM funcionario";
+							                $result = pg_query($con,$sql);
+							                
+										while ($row = pg_fetch_assoc($result)) {
+										echo '<option value="'.htmlspecialchars($row['matricula']).'">'.htmlspecialchars($row['nome']).'</option>';}
+										pg_close($con);
+									  ?>
+									</select>
+								</div>
+								
+								
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Supervisor</b></label>
+									<input class="form-control" name="supervisor" id="supervisor" type="number" placeholder="">
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Categoria</b></label>
+									<input class="form-control" name="categoria" id="categoria" type="text" placeholder="">
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Salario Minimo</b></label>
+									<input class="form-control" name="salariominimo" id="salariominimo" type="number" placeholder="">
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn pull-right">Register</button>
 									<div class="clearfix"></div>
 								</div>
 							</form>
 						</div>
 					</div>
-					<div class="col-sm-7 social-login">
-						<p>Or login with your Facebook or Twitter</p>
+				<!--	<div class="col-sm-6 col-sm-offset-1 social-login">
+						<p>You can use your Facebook or Twitter for registration</p>
 						<div class="social-login-buttons">
-							<a href="#" class="btn-facebook-login">Login with Facebook</a>
-							<a href="#" class="btn-twitter-login">Login with Twitter</a>
+							<a href="#" class="btn-facebook-login">Use Facebook</a>
+							<a href="#" class="btn-twitter-login">Use Twitter</a>
 						</div>
-						<div class="clearfix"></div>
-						<div class="not-member">
-							<p>Not a member? <a href="page-register.html">Register here</a></p>
-						</div>
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</div>
@@ -132,6 +171,16 @@
 	    <div class="footer">
 	    	<div class="container">
 		    	<div class="row">
+		    	<div class="row">
+		    		<!--<div class="col-footer col-md-3 col-xs-6">
+		    			<h3>Our Latest Work</h3>
+		    			<div class="portfolio-item">
+							<div class="portfolio-image">
+								<a href="page-portfolio-item.html"><img src="img/portfolio6.jpg" alt="Project Name"></a>
+							</div>
+						</div>
+		    		</div>-->
+		    		
 		    		
 		    		<div class="col-footer col-md-4 col-xs-6">
 		    			<h3>Contacts</h3>
@@ -139,7 +188,6 @@
 	        				<b>Address:</b> Av. Pasteur 458, Urca, Rio de Janeiro, Brasil<br/>
 	        				<b>Phone:</b> +55 21 1234-5678<br/>
 	        				<b>Email:</b> <a href="mailto:contato@purpose.com">contato@purpose.com</a></p>
-		    			</p>
 		    		</div>
 		    		<div class="col-footer col-md-2 col-xs-6">
 		    			<h3>Stay Connected</h3>
@@ -157,7 +205,6 @@
 		    	</div>
 		    </div>
 	    </div>
-
         <!-- Javascripts -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
