@@ -23,6 +23,9 @@
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
         
 
         <!-- Navigation & Logo-->
@@ -31,7 +34,17 @@
 	        	<div class="menuextras">
 					<div class="extras">
 						<ul>
-							<li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> <a href="page-shopping-cart.html"><b>0 items</b></a></li>
+							<li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> <a href="page-shopping-cart.html"><b>3 items</b></a></li>
+							<li>
+								<div class="dropdown choose-country">
+									<a class="#" data-toggle="dropdown" href="#"><img src="img/flags/gb.png" alt="Great Britain"> UK</a>
+									<ul class="dropdown-menu" role="menu">
+										<li role="menuitem"><a href="#"><img src="img/flags/us.png" alt="United States"> US</a></li>
+										<li role="menuitem"><a href="#"><img src="img/flags/de.png" alt="Germany"> DE</a></li>
+										<li role="menuitem"><a href="#"><img src="img/flags/es.png" alt="Spain"> ES</a></li>
+									</ul>
+								</div>
+							</li>
 			        		<li><a href="page-login.html">Login</a></li>
 			        	</ul>
 					</div>
@@ -42,7 +55,7 @@
 						<li>
 							<a href="index.html">Home</a>
 						</li>
-						<li class="has-submenu active">
+					<li class="has-submenu active">
 							<a href="#">Listar</a>
 							<div class="mainmenu-submenu">
 								<div class="mainmenu-submenu-inner"> 
@@ -111,43 +124,31 @@
 				<div class="row">
 					<div class="col-sm-5">
 						<div class="basic-login">
-							<form action="cadastrarFuncionario.php" method="POST" role="form">
+							<form action="cadastrarFabricante.php" method="POST" role="form">
+								
 								<div class="form-group">
-		        				 	<label for="register-username"><i class="icon-user"></i> <b>Matricula</b></label>
-									<input class="form-control" name="matricula" id="matricula" type="number" placeholder="">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Seu nome</b></label>
+									<input class="form-control" name="descrição" id="descrição" type="text" placeholder="">
+								</div>
+								
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Seu telefone</b></label>
+									<input class="form-control" name="descrição" id="descrição" type="number" placeholder="">
+								</div>
+								
+								<div class="form-group">
+		        				 	<label for="register-username"><i class="icon-user"></i> <b>Modelo</b></label>
+									<input class="form-control" name="Modelo" id="nome" type="text" placeholder="">
 								</div>
 								<div class="form-group">
-		        				 	<label for="register-username"><i class="icon-user"></i> <b>Nome</b></label>
-									<input class="form-control" name="nome" id="nome" type="text" placeholder="">
-								</div>
-								<div class="form-group">
-		        				 	<label for="register-username"><i class="icon-user"></i> <b>Data de Nascimento</b></label>
-									<input class="form-control" name="datanascimento" id="datanascimento" type="date" placeholder="">
-								</div>
-								<div class="form-group">
-		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Senha</b></label>
-									<input class="form-control" name="senha" id="senha" type="password" placeholder="">
-								</div>
-								<div class="form-group">
-		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Endereço</b></label>
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Descri&ccedil;&atilde;o</b></label>
 									<input class="form-control" name="endereco" id="endereco" type="text" placeholder="">
 								</div>
 								<div class="form-group">
-		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Telefone</b></label>
-									<input class="form-control" name="telefone" id="telefone" type="text" placeholder="">
-								</div>
-								<div class="form-group">
-		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Supervisor</b></label>
-									<input class="form-control" name="supervisor" id="supervisor" type="number" placeholder="">
-								</div>
-								<div class="form-group">
 		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Categoria</b></label>
-									<input class="form-control" name="categoria" id="categoria" type="text" placeholder="">
+									<input class="form-control" name="telefone" id="telefone" type="number" placeholder="">
 								</div>
-								<div class="form-group">
-		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Salario Minimo</b></label>
-									<input class="form-control" name="salariominimo" id="salariominimo" type="number" placeholder="">
-								</div>
+								
 								<div class="form-group">
 									<button type="submit" class="btn pull-right">Enviar</button>
 									<div class="clearfix"></div>
@@ -155,13 +156,7 @@
 							</form>
 						</div>
 					</div>
-				<!--	<div class="col-sm-6 col-sm-offset-1 social-login">
-						<p>You can use your Facebook or Twitter for registration</p>
-						<div class="social-login-buttons">
-							<a href="#" class="btn-facebook-login">Use Facebook</a>
-							<a href="#" class="btn-twitter-login">Use Twitter</a>
-						</div>
-					</div>-->
+				
 				</div>
 			</div>
 		</div>
@@ -170,16 +165,7 @@
 	    <div class="footer">
 	    	<div class="container">
 		    	<div class="row">
-		    	<div class="row">
-		    		<!--<div class="col-footer col-md-3 col-xs-6">
-		    			<h3>Our Latest Work</h3>
-		    			<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="img/portfolio6.jpg" alt="Project Name"></a>
-							</div>
-						</div>
-		    		</div>-->
-		    		
+		    		<div class="row">
 		    		
 		    		<div class="col-footer col-md-4 col-xs-6">
 		    			<h3>Contacts</h3>
@@ -204,6 +190,7 @@
 		    	</div>
 		    </div>
 	    </div>
+
         <!-- Javascripts -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
