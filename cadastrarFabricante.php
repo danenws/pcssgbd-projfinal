@@ -22,14 +22,16 @@ else {
     $nome = pg_escape_string($_POST['Nome']); 
     $end = settype($_POST['Endereço'], "int"); 
     $tel = settype($_POST['Telefone'], "int"); 
-    $desc = ($_POST['Descrição']);
+    $desc = pg_escape_string($_POST['Descrição']);
    
     
     //Armazena as informações no banco
     $query = "INSERT INTO fabricante(nome, idtelefone, idendereco, descricao) 
-    VALUES ('$nome', ' '$tel', $end', '$desc')";
+    VALUES ('$nome', '$tel', '$end', '$desc')";
 
     $result = pg_query($dbcon, $query);
+    
+    pg_close($dbcon);
 }
 
     

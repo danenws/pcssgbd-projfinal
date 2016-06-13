@@ -110,8 +110,7 @@
 								</div>
 								
 								<div class="form-group">
-		        				 	<select id="animal" name="animal">                      
-									  <option value="0">--Select Animal--</option>
+		        				 	<select id="supervisor" name="supervisor">                      
 									  
 									  <?php
 									    $dbconString = "host = localhost dbname = roupasexclusivas user = postgres password = root";
@@ -129,18 +128,21 @@
 							                $sql = "SELECT matricula, nome FROM funcionario";
 							                $result = pg_query($con,$sql);
 							                
-										while ($row = pg_fetch_assoc($result)) {
-										echo '<option value="'.htmlspecialchars($row['matricula']).'">'.htmlspecialchars($row['nome']).'</option>';}
-										pg_close($con);
+							                while($row = pg_fetch_assoc($result)) {
+					                             echo '"<option value="' . $row['matricula']. '">'.$row['nome']. '</option>' ;
+					                        }
+												               
+											pg_close($con);
+							            }
 									  ?>
 									</select>
 								</div>
 								
 								
-								<div class="form-group">
+							<!--	<div class="form-group">
 		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Supervisor</b></label>
 									<input class="form-control" name="supervisor" id="supervisor" type="number" placeholder="">
-								</div>
+								</div>-->
 								<div class="form-group">
 		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Categoria</b></label>
 									<input class="form-control" name="categoria" id="categoria" type="text" placeholder="">
